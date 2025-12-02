@@ -1,6 +1,0 @@
-image: maze_map_dm.pgm
-resolution: 0.005  # 0.5 cm per pixel = 0.005 m
-origin: [-0.0025, -0.0025, 0.0]  # 将原点对齐到左下角中心
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196

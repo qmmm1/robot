@@ -1,0 +1,18 @@
+simple_maze_bot/
+├── maps/
+│   ├── maze_no_soft.pgm    # 软障碍区域涂白（可通行）
+│   ├── maze_no_soft.yaml
+│   ├── maze_original.pgm       # 软障碍区域涂黑（不可通行）
+│   └── maze_original.yaml
+│
+├── config/
+│   ├── nav2_params_phase1.yaml   # 阶段1参数
+│   └── nav2_params_phase2.yaml      # 阶段2参数
+│
+├── scripts/
+│   ├── go_to_start.py             # 阶段1：导航到 START
+│   └── start_maze_task.py         # 阶段2：开始正式任务
+│
+└── launch/
+    ├── phase1_to_start.launch.py
+    └── phase2_maze.launch.py
