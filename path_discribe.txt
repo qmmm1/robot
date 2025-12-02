@@ -1,18 +1,27 @@
 simple_maze_bot/
-├── maps/
-│   ├── maze_no_soft.pgm    # 软障碍区域涂白（可通行）
-│   ├── maze_no_soft.yaml
-│   ├── maze_original.pgm       # 软障碍区域涂黑（不可通行）
-│   └── maze_original.yaml
 │
-├── config/
-│   ├── nav2_params_phase1.yaml   # 阶段1参数
-│   └── nav2_params_phase2.yaml      # 阶段2参数
+├── package.xml                     # ← 包元数据（依赖、作者、许可证等）
+├── setup.py                        # ← Python 构建与安装配置
 │
-├── scripts/
-│   ├── go_to_start.py             # 阶段1：导航到 START
-│   └── start_maze_task.py         # 阶段2：开始正式任务
+├── simple_maze_bot/                # ← Python 模块包（必须与 package.xml 中 name 一致）
+│   ├── __init__.py                 # ← 空文件，使目录成为 Python 包
+│   │
+│   └── scripts/                    # ← 可执行脚本目录
+│       ├── __init__.py             # ← 必须有，才能被 import
+│       ├── go_to_start.py          # ← 阶段1：导航到 START (0.1, 0.1)
+│       └── start_maze_task.py      # ← 阶段2：执行迷宫任务（如到终点）
 │
-└── launch/
-    ├── phase1_to_start.launch.py
-    └── phase2_maze.launch.py
+├── maps/                           # ← 地图资源（静态）
+│   ├── maze_no_soft.pgm            # 软障碍区域涂白（可通行）
+│   ├── maze_no_soft.yaml           # 对应 PGM 的元数据
+│   ├── maze_original.pgm           # 软障碍区域涂黑（不可通行）
+│   └── maze_original.yaml          # 完整地图元数据
+│
+├── config/                         # ← Nav2 参数配置
+│   ├── nav2_params_phase1.yaml     # 阶段1：使用 /map_no_soft
+│   └── nav2_params_phase2.yaml     # 阶段2：使用 /map_full
+│
+└── launch/                         # ← 启动文件
+    ├── __init__.py                 # ← 可选，但推荐（使 launch 目录可导入）
+    ├── phase1_to_start.launch.py   # 启动阶段1：加载 no_soft 地图 + 导航栈
+    └── phase2_maze.launch.py       # 启动阶段2：加载 full 地图 + 导航栈
