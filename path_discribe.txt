@@ -18,8 +18,8 @@ simple_maze_bot/
 │   └── maze_original.yaml          # 完整地图元数据
 │
 ├── config/                         # ← Nav2 参数配置
-│   ├── nav2_params_phase1.yaml     # 阶段1：使用 /map_no_soft
-│   └── nav2_params_phase2.yaml     # 阶段2：使用 /map_full
+│   ├── nav2_params_phase1.yaml     # 阶段1：使用 /maze_no_soft
+│   └── nav2_params_phase2.yaml     # 阶段2：使用 /maze_full
 │
 └── launch/                         # ← 启动文件
     ├── __init__.py                 # ← 可选，但推荐（使 launch 目录可导入）
