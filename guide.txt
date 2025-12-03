@@ -1,0 +1,25 @@
+# 进入工作空间
+cd ~/ros2_ws
+
+# 编译你的包（首次编译或代码修改后需要）
+colcon build --packages-select simple_maze_bot
+
+# 或者编译所有包（如果还有其他包）
+# colcon build
+# 每次新开终端都需要执行（或添加到 ~/.bashrc）
+source install/setup.bash
+
+# 终端 1：启动 Phase 1 导航栈
+ros2 launch simple_maze_bot phase1_to_start.launch.py
+
+# 终端 2：启动 Phase 2 导航栈（需要先停止 Phase 1）
+ros2 launch simple_maze_bot phase2_maze.launch.py
+
+# 终端 3：运行 Phase 1 脚本
+ros2 run simple_maze_bot go_to_start
+
+# 终端 4：运行 Phase 2 脚本
+ros2 run simple_maze_bot start_maze_task
+
+# 终端 5：启动 RViz
+rviz2 -d $(ros2 pkg prefix nav2_bringup)/share/nav2_bringup/rviz/nav2_default_view.rviz
