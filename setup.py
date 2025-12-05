@@ -6,24 +6,31 @@ from setuptools import setup
 
 package_name = 'simple_maze_bot'
 
-# 自动收集所有资源文件
 def collect_data_files(base_dir):
     data_files = []
     for root, dirs, files in os.walk(base_dir):
         if files:
-            rel_path = os.path.relpath(root, '.')
-            file_list = [os.path.join(root, f) for f in files]
-            data_files.append((f'share/{package_name}/{rel_path}', file_list))
+            # 过滤掉 __pycache__ 和 .pyc 文件
+            filtered_files = [
+                os.path.join(root, f) for f in files
+                if not f.endswith('.pyc') and '__pycache__' not in root
+            ]
+            if filtered_files:
+                rel_path = os.path.relpath(root, '.')
+                data_files.append((f'share/{package_name}/{rel_path}', filtered_files))
     return data_files
 
 setup(
     name=package_name,
     version='0.1.0',
-    packages=[package_name, package_name + '.scripts', package_name + '.launch'],
+    # ✅ 只包含真正的 Python 模块
+    packages=[package_name, package_name + '.scripts'],
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-    ] + collect_data_files('maps') + collect_data_files('config') + collect_data_files('launch'),
+    ] + collect_data_files('maps') 
+      + collect_data_files('config') 
+      + collect_data_files('launch'),  # ✅ launch 仅作为数据文件
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Your Name',
