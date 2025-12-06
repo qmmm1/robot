@@ -1,7 +1,7 @@
 <!-- worlds/maze_environment.world -->
 <sdf version="1.6">
   <world name="maze_environment">
-    <!-- 基础环境 -->
+
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -9,8 +9,6 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- START 点标记（绿色圆柱） -->
-    <!-- 根据你的 go_to_start.py，START 点是 (0.22, 1.65) -->
     <model name="start_marker">
       <pose>0.22 1.65 0.01 0 0 0</pose>
       <link name="link">
@@ -21,7 +19,6 @@
       </link>
     </model>
 
-    <!-- END 点标记（黄色圆柱） -->
     <!-- 根据你的 start_maze_task.py，终点是 (1.58, 1.65) -->
     <model name="end_marker">
       <pose>1.58 1.65 0.01 0 0 0</pose>
@@ -33,8 +30,6 @@
       </link>
     </model>
 
-    <!-- 硬障碍物（黑色墙壁，color=0） -->
-    <!-- 外框 -->
     <model name="wall_AC">  <!-- A(0,0) to C(0,18) -->
       <pose>0 9 0.25 0 0 0</pose>
       <link name="link">
@@ -87,7 +82,6 @@
       </link>
     </model>
 
-    <!-- 内部硬障碍 -->
     <model name="wall_AE">  <!-- A(0,0) to E(0,4.5) -->
       <pose>0 2.25 0.25 0 0 0</pose>
       <link name="link">
@@ -140,16 +134,15 @@
       </link>
     </model>
 
-    <!-- 软障碍物（灰色，color=127） -->
     <model name="soft_wall_HI">  <!-- H(4.5,18) to I(4.5,8) -->
-      <pose>4.5 13 0.01 0 0 0</pose>  <!-- 贴近地面，高度0.01m -->
+      <pose>4.5 13 0.01 0 0 0</pose> 
       <link name="link">
         <collision name="collision">
           <geometry><box><size>0.01 10.0 0.01</size></box></geometry>
         </collision>
         <visual name="visual">
           <geometry><box><size>0.01 10.0 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
         </visual>
       </link>
     </model>
@@ -162,7 +155,7 @@
         </collision>
         <visual name="visual">
           <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
         </visual>
       </link>
     </model>
@@ -175,12 +168,11 @@
         </collision>
         <visual name="visual">
           <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <material><ambient>0.5 0.5 0.5 1</ambient></material> 
         </visual>
       </link>
     </model>
 
-    <!-- 可选：添加地面纹理提示 -->
     <light name="ambient_light" type="directional">
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
