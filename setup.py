@@ -30,7 +30,8 @@ setup(
         ('share/' + package_name, ['package.xml']),
     ] + collect_data_files('maps') 
       + collect_data_files('config') 
-      + collect_data_files('launch'),  # ✅ launch 仅作为数据文件
+      + collect_data_files('launch')
+      + collect_data_files('worlds'),  # ✅ launch 仅作为数据文件
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Your Name',
@@ -41,6 +42,7 @@ setup(
         'console_scripts': [
             'go_to_start = simple_maze_bot.scripts.go_to_start:main',
             'start_maze_task = simple_maze_bot.scripts.start_maze_task:main',
+            'test_complete_simulation = simple_maze_bot.scripts.test_complete_simulation:main',
         ],
     },
 )
