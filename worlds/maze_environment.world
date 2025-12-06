@@ -1,6 +1,7 @@
-<!-- worlds/maze_environment.world -->
+<?xml version="1.0"?>
 <sdf version="1.6">
   <world name="maze_environment">
+
     <!-- 基础环境 -->
     <include>
       <uri>model://ground_plane</uri>
@@ -10,181 +11,313 @@
     </include>
 
     <!-- START 点标记（绿色圆柱） -->
-    <!-- 根据你的 go_to_start.py，START 点是 (0.22, 1.65) -->
     <model name="start_marker">
       <pose>0.22 1.65 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
-          <geometry><cylinder><radius>0.05</radius><length>0.02</length></cylinder>
-          <material><ambient>0 1 0 0.7</ambient></material>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 0.7</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
     <!-- END 点标记（黄色圆柱） -->
-    <!-- 根据你的 start_maze_task.py，终点是 (1.58, 1.65) -->
     <model name="end_marker">
       <pose>1.58 1.65 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
-          <geometry><cylinder><radius>0.05</radius><length>0.02</length></cylinder>
-          <material><ambient>1 1 0 0.7</ambient></material>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 0 0.7</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <!-- 硬障碍物（黑色墙壁，color=0） -->
-    <!-- 外框 -->
-    <model name="wall_AC">  <!-- A(0,0) to C(0,18) -->
+    <!-- 外框硬障碍（黑色墙壁） -->
+    <model name="wall_AC">
       <pose>0 9 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.1 18.0 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.1 18.0 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.1 18.0 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>0.1 18.0 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_CD">  <!-- C(0,18) to D(18,18) -->
+
+    <model name="wall_CD">
       <pose>9 18 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>18.0 0.1 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>18.0 0.1 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>18.0 0.5 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>18.0 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_DB">  <!-- D(18,18) to B(18,0) -->
+
+    <model name="wall_DB">
       <pose>18 9 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.1 18.0 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.1 18.0 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.1 18.0 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>0.1 18.0 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_BA">  <!-- B(18,0) to A(0,0) -->
+
+    <model name="wall_BA">
       <pose>9 0 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>18.0 0.1 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>18.0 0.1 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>18.0 0.1 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>18.0 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <!-- 内部硬障碍 -->
-    <model name="wall_AE">  <!-- A(0,0) to E(0,4.5) -->
+    <!-- 内部小房间硬障碍 -->
+    <model name="wall_AE">
       <pose>0 2.25 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.1 4.5 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.1 4.5 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.1 4.5 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>0.1 4.5 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_EF">  <!-- E(0,4.5) to F(4.5,4.5) -->
+
+    <model name="wall_EF">
       <pose>2.25 4.5 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>4.5 0.1 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>4.5 0.1 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>4.5 0.1 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>4.5 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_FG">  <!-- F(4.5,4.5) to G(4.5,0) -->
+
+    <model name="wall_FG">
       <pose>4.5 2.25 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.1 4.5 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.1 4.5 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.1 4.5 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>0.1 4.5 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
-    
-    <model name="wall_GA">  <!-- G(4.5,0) to A(0,0) -->
+
+    <model name="wall_GA">
       <pose>2.25 0 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>4.5 0.1 0.5</size></box></geometry>
+          <geometry>
+            <box>
+              <size>4.5 0.1 0.5</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>4.5 0.1 0.5</size></box></geometry>
-          <material><ambient>0 0 0 1</ambient></material>
+          <geometry>
+            <box>
+              <size>4.5 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <!-- 软障碍物（灰色，color=127） -->
-    <model name="soft_wall_HI">  <!-- H(4.5,18) to I(4.5,8) -->
-      <pose>4.5 13 0.01 0 0 0</pose>  <!-- 贴近地面，高度0.01m -->
+    <!-- 软障碍物（灰色细线，仅视觉，无碰撞） -->
+    <!-- H(4.5,18) to I(4.5,8) -->
+    <model name="soft_wall_HI">
+      <pose>4.5 13 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.01 10.0 0.01</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.01 10.0 0.01</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.01 10.0 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <geometry>
+            <box>
+              <size>0.01 10.0 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <model name="soft_wall_KN">  <!-- K(9,13.5) to N(9,0) -->
+    <!-- K(9,13.5) to N(9,0) -->
+    <model name="soft_wall_KN">
       <pose>9 6.75 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.01 13.5 0.01</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <geometry>
+            <box>
+              <size>0.01 13.5 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <model name="soft_wall_ML">  <!-- M(13.5,18) to L(13.5,4.5) -->
+    <!-- M(13.5,18) to L(13.5,4.5) -->
+    <model name="soft_wall_ML">
       <pose>13.5 11.25 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
-          <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
+          <geometry>
+            <box>
+              <size>0.01 13.5 0.01</size>
+            </box>
+          </geometry>
         </collision>
         <visual name="visual">
-          <geometry><box><size>0.01 13.5 0.01</size></box></geometry>
-          <material><ambient>0.5 0.5 0.5 1</ambient></material>  <!-- 灰色 -->
+          <geometry>
+            <box>
+              <size>0.01 13.5 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
         </visual>
       </link>
     </model>
 
-    <!-- 可选：添加地面纹理提示 -->
+    <!-- 环境光照 -->
     <light name="ambient_light" type="directional">
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>100</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 -0.5 -1</direction>
     </light>
+
   </world>
 </sdf>
