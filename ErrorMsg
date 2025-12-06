@@ -1,0 +1,111 @@
+yahboom@yahboom-VM:~/yahboomcar_ws$ ros2 launch simple_maze_bot sim_phase1_test.launch.py
+[INFO] [launch]: All log files can be found below /home/yahboom/.ros/log/2025-12-07-00-59-46-468683-yahboom-VM-12859
+[INFO] [launch]: Default logging verbosity is set to INFO
+Robot starting at: x=16.94, y=13.38, yaw=5.09
+Robot starting at: x=5.93, y=4.59, yaw=3.30
+[INFO] [gzserver-1]: process started with pid [12861]
+[INFO] [gzclient-2]: process started with pid [12863]
+[INFO] [spawn_entity.py-3]: process started with pid [12865]
+[INFO] [robot_state_publisher-4]: process started with pid [12867]
+[INFO] [map_server-5]: process started with pid [12869]
+[INFO] [amcl-6]: process started with pid [12871]
+[INFO] [planner_server-7]: process started with pid [12873]
+[INFO] [controller_server-8]: process started with pid [12876]
+[INFO] [bt_navigator-9]: process started with pid [12878]
+[INFO] [lifecycle_manager-10]: process started with pid [12885]
+[amcl-6] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[controller_server-8] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[lifecycle_manager-10] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[map_server-5] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[planner_server-7] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[robot_state_publisher-4] [FATAL] [1765040393.482064122] [robot_state_publisher]: robot_description parameter must not be empty
+[robot_state_publisher-4] terminate called after throwing an instance of 'std::runtime_error'
+[amcl-6] [INFO] [1765040393.513493947] [amcl]: 
+[amcl-6] 	amcl lifecycle node launched. 
+[amcl-6] 	Waiting on external lifecycle transitions to activate
+[amcl-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[robot_state_publisher-4]   what():  robot_description parameter must not be empty
+[amcl-6] [INFO] [1765040393.596420188] [amcl]: Creating
+[controller_server-8] [INFO] [1765040393.692150345] [controller_server]: 
+[controller_server-8] 	controller_server lifecycle node launched. 
+[controller_server-8] 	Waiting on external lifecycle transitions to activate
+[controller_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-9] RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED is now ignored. Please set RCUTILS_LOGGING_USE_STDOUT and RCUTILS_LOGGING_BUFFERED_STREAM to control the stream and the buffering of log messages.
+[lifecycle_manager-10] [INFO] [1765040393.821061978] [lifecycle_manager_navigation]: Creating
+[map_server-5] [INFO] [1765040393.827568687] [map_server]: 
+[map_server-5] 	map_server lifecycle node launched. 
+[map_server-5] 	Waiting on external lifecycle transitions to activate
+[map_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-5] [INFO] [1765040393.837512285] [map_server]: Creating
+[lifecycle_manager-10] [INFO] [1765040393.882237383] [lifecycle_manager_navigation]: Creating and initializing lifecycle service clients
+[controller_server-8] [INFO] [1765040394.440242789] [controller_server]: Creating controller server
+[planner_server-7] [INFO] [1765040394.564774460] [planner_server]: 
+[planner_server-7] 	planner_server lifecycle node launched. 
+[planner_server-7] 	Waiting on external lifecycle transitions to activate
+[planner_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-7] [INFO] [1765040394.801562127] [planner_server]: Creating
+[bt_navigator-9] [INFO] [1765040395.401800633] [bt_navigator]: 
+[bt_navigator-9] 	bt_navigator lifecycle node launched. 
+[bt_navigator-9] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-9] [INFO] [1765040395.403954897] [bt_navigator]: Creating
+[planner_server-7] [INFO] [1765040395.528331061] [global_costmap.global_costmap]: 
+[planner_server-7] 	global_costmap lifecycle node launched. 
+[planner_server-7] 	Waiting on external lifecycle transitions to activate
+[planner_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-7] [INFO] [1765040395.556289171] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-8] [INFO] [1765040395.873199485] [local_costmap.local_costmap]: 
+[controller_server-8] 	local_costmap lifecycle node launched. 
+[controller_server-8] 	Waiting on external lifecycle transitions to activate
+[controller_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-8] [INFO] [1765040395.881851325] [local_costmap.local_costmap]: Creating Costmap
+[controller_server-8] terminate called after throwing an instance of 'rclcpp::exceptions::InvalidParameterTypeException'
+[controller_server-8]   what():  parameter 'height' has invalid type: Wrong parameter type, parameter {height} is of type {integer}, setting it to {double} is not allowed.
+[ERROR] [robot_state_publisher-4]: process has died [pid 12867, exit code -6, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args --params-file /tmp/launch_params_clcyw18x -r /joint_states:=turtlebot3/joint_states'].
+[lifecycle_manager-10] [INFO] [1765040396.895868040] [lifecycle_manager_navigation]: Starting managed nodes bringup...
+[lifecycle_manager-10] [INFO] [1765040396.896095642] [lifecycle_manager_navigation]: Configuring map_server
+[map_server-5] [INFO] [1765040396.905156708] [map_server]: Configuring
+[map_server-5] [INFO] [map_io]: Loading yaml file: /home/yahboom/yahboomcar_ws/install/simple_maze_bot/share/simple_maze_bot/maps/maze_no_soft.yaml
+[map_server-5] [DEBUG] [map_io]: resolution: 0.005
+[map_server-5] [DEBUG] [map_io]: origin[0]: 0
+[map_server-5] [DEBUG] [map_io]: origin[1]: 0
+[map_server-5] [DEBUG] [map_io]: origin[2]: 0
+[map_server-5] [DEBUG] [map_io]: free_thresh: 0.196
+[map_server-5] [DEBUG] [map_io]: occupied_thresh: 0.65
+[map_server-5] [DEBUG] [map_io]: mode: trinary
+[map_server-5] [DEBUG] [map_io]: negate: 0
+[map_server-5] [INFO] [map_io]: Loading image_file: /home/yahboom/yahboomcar_ws/install/simple_maze_bot/share/simple_maze_bot/maps/maze_no_soft.pgm
+[map_server-5] [DEBUG] [map_io]: Read map /home/yahboom/yahboomcar_ws/install/simple_maze_bot/share/simple_maze_bot/maps/maze_no_soft.pgm: 361 X 361 map @ 0.005 m/cell
+[lifecycle_manager-10] [INFO] [1765040397.175519649] [lifecycle_manager_navigation]: Configuring amcl
+[amcl-6] [INFO] [1765040397.176953775] [amcl]: Configuring
+[amcl-6] [INFO] [1765040397.177112724] [amcl]: initTransforms
+[amcl-6] [INFO] [1765040397.619223802] [amcl]: initPubSub
+[amcl-6] [INFO] [1765040397.718440974] [amcl]: Subscribed to map topic.
+[lifecycle_manager-10] [INFO] [1765040397.802385465] [lifecycle_manager_navigation]: Configuring planner_server
+[planner_server-7] [INFO] [1765040397.812470300] [planner_server]: Configuring
+[planner_server-7] [INFO] [1765040397.812647571] [global_costmap.global_costmap]: Configuring
+[ERROR] [controller_server-8]: process has died [pid 12876, exit code -6, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args -r __node:=controller_server --params-file /home/yahboom/yahboomcar_ws/install/simple_maze_bot/share/simple_maze_bot/config/nav2_params_phase1.yaml'].
+[planner_server-7] [INFO] [1765040398.169246931] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-7] [INFO] [1765040398.246316820] [global_costmap.global_costmap]: Subscribing to the map topic (/maze_no_soft) with transient local durability
+[planner_server-7] [INFO] [1765040398.563030779] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-7] [INFO] [1765040398.563111509] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-7] [INFO] [1765040398.619377245] [global_costmap.global_costmap]: Subscribed to Topics: 
+[planner_server-7] [INFO] [1765040398.623387515] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-7] [INFO] [1765040398.625409275] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-7] [INFO] [1765040398.715844989] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-7] [INFO] [1765040399.087755644] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-7] [INFO] [1765040399.087984448] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-7] [INFO] [1765040399.108809092] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1765040399.413576859] [lifecycle_manager_navigation]: Configuring controller_server
+[spawn_entity.py-3] [INFO] [1765040399.948332332] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1765040399.950645130] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-3] /opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/qos.py:307: UserWarning: DurabilityPolicy.RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL is deprecated. Use DurabilityPolicy.TRANSIENT_LOCAL instead.
+[spawn_entity.py-3]   warnings.warn(
+[spawn_entity.py-3] [INFO] [1765040400.117205491] [spawn_entity]: Waiting for entity xml on robot_description
+[gzserver-1] Error [parser.cc:403] Error parsing XML in file [/home/yahboom/yahboomcar_ws/install/simple_maze_bot/share/simple_maze_bot/worlds/maze_environment.world]: Error reading end tag.
+[spawn_entity.py-3] [INFO] [1765040401.071957092] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1765040401.073736780] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-3] [INFO] [1765040401.597853568] [spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-3] [INFO] [1765040402.339142221] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [turtlebot3]
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 12865]
+[ERROR] [gzclient-2]: process has died [pid 12863, exit code -9, cmd 'gzclient'].
