@@ -19,7 +19,6 @@
       </link>
     </model>
 
-    <!-- 根据你的 start_maze_task.py，终点是 (1.58, 1.65) -->
     <model name="end_marker">
       <pose>1.58 1.65 0.01 0 0 0</pose>
       <link name="link">
