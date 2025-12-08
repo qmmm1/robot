@@ -12,8 +12,8 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     
     # 随机生成机器人初始位置（用于 Phase 1）
-    start_x = random.uniform(4.5, 17.5)
-    start_y = random.uniform(4.5, 17.5)
+    start_x = random.uniform(0.45, 1.75)
+    start_y = random.uniform(0.45, 1.75)
     start_yaw = random.uniform(0, 2 * 3.14159)
     
     print(f"Robot starting at: x={start_x:.2f}, y={start_y:.2f}, yaw={start_yaw:.2f}")

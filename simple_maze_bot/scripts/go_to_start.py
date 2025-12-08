@@ -22,8 +22,8 @@ def main():
     goal_msg = NavigateToPose.Goal()
     goal_msg.pose.header.frame_id = 'map'
     goal_msg.pose.header.stamp = node.get_clock().now().to_msg()
-    goal_msg.pose.pose.position.x = 0.22   # 米
-    goal_msg.pose.pose.position.y = 1.65
+    goal_msg.pose.pose.position.x = 1.58  # 米
+    goal_msg.pose.pose.position.y = 0.15
     goal_msg.pose.pose.orientation.w = 1.0  # 朝向 0 弧度
 
     node.get_logger().info('Sending goal to START point (0.1, 0.1)...')

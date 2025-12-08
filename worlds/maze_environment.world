@@ -9,9 +9,8 @@
       <uri>model://sun</uri>
     </include>
 
-
     <model name="start_marker">
-      <pose>0.22 1.65 0.01 0 0 0</pose>
+      <pose>1.58 0.15 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -28,7 +27,7 @@
     </model>
 
     <model name="end_marker">
-      <pose>1.58 1.65 0.01 0 0 0</pose>
+      <pose>0.77 1.6 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -45,19 +44,19 @@
     </model>
 
     <model name="wall_AC">
-      <pose>0 9 0.25 0 0 0</pose>
+      <pose>0 0.9 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 18.0 0.5</size>
+              <size>0.01 1.8 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 18.0 0.5</size>
+              <size>0.01 1.8 0.5</size>
             </box>
           </geometry>
           <material>
@@ -68,19 +67,19 @@
     </model>
 
     <model name="wall_CD">
-      <pose>9 18 0.25 0 0 0</pose>
+      <pose>0.9 1.8 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>18.0 0.1 0.5</size>
+              <size>1.8 0.01 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>18.0 0.1 0.5</size>
+              <size>1.8 0.01 0.5</size>
             </box>
           </geometry>
           <material>
@@ -91,19 +90,19 @@
     </model>
 
     <model name="wall_DB">
-      <pose>18 9 0.25 0 0 0</pose>
+      <pose>1.8 0.9 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 18.0 0.5</size>
+              <size>0.01 1.8 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 18.0 0.5</size>
+              <size>0.01 1.8 0.5</size>
             </box>
           </geometry>
           <material>
@@ -114,19 +113,19 @@
     </model>
 
     <model name="wall_BA">
-      <pose>9 0 0.25 0 0 0</pose>
+      <pose>0.9 0 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>18.0 0.1 0.5</size>
+              <size>1.8 0.01 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>18.0 0.1 0.5</size>
+              <size>1.8 0.01 0.5</size>
             </box>
           </geometry>
           <material>
@@ -137,19 +136,19 @@
     </model>
 
     <model name="wall_AE">
-      <pose>0 2.25 0.25 0 0 0</pose>
+      <pose>0 0.225 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 4.5 0.5</size>
+              <size>0.01 0.45 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 4.5 0.5</size>
+              <size>0.01 0.45 0.5</size>
             </box>
           </geometry>
           <material>
@@ -160,19 +159,19 @@
     </model>
 
     <model name="wall_EF">
-      <pose>2.25 4.5 0.25 0 0 0</pose>
+      <pose>0.225 0.45 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>4.5 0.1 0.5</size>
+              <size>0.45 0.01 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>4.5 0.1 0.5</size>
+              <size>0.45 0.01 0.5</size>
             </box>
           </geometry>
           <material>
@@ -183,19 +182,19 @@
     </model>
 
     <model name="wall_FG">
-      <pose>4.5 2.25 0.25 0 0 0</pose>
+      <pose>0.45 0.225 0.25 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 4.5 0.5</size>
+              <size>0.01 0.45 0.5</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 4.5 0.5</size>
+              <size>0.01 0.45 0.5</size>
             </box>
           </geometry>
           <material>
@@ -205,93 +204,185 @@
       </link>
     </model>
 
-    <model name="wall_GA">
-      <pose>2.25 0 0.25 0 0 0</pose>
+    <model name="soft_wall_SR">
+      <pose>0.325 1.7 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>4.5 0.1 0.5</size>
+              <size>0.45 0.01 0.02</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>4.5 0.1 0.5</size>
+              <size>0.45 0.01 0.02</size>
             </box>
           </geometry>
           <material>
-            <ambient>0 0 0 1</ambient>
+            <ambient>0 0 1 1</ambient>
           </material>
         </visual>
       </link>
     </model>
 
-    <model name="soft_wall_HI">
-      <pose>4.5 13 0.01 0 0 0</pose>
+    <model name="soft_wall_ST">
+      <pose>0.1 1.475 0.01 0 0 1.5708</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.01 10.0 0.01</size>
+              <size>0.45 0.01 0.02</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.01 10.0 0.01</size>
+              <size>0.45 0.01 0.02</size>
             </box>
           </geometry>
           <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
+            <ambient>0 0 1 1</ambient>
           </material>
         </visual>
       </link>
     </model>
 
-    <model name="soft_wall_KN">
-      <pose>9 6.75 0.01 0 0 0</pose>
+    <model name="soft_wall_IH">
+      <pose>1.05 1.5 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.01 13.5 0.01</size>
+              <size>0.9 0.01 0.02</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.01 13.5 0.01</size>
+              <size>0.9 0.01 0.02</size>
             </box>
           </geometry>
           <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="soft_wall_N1K1">
+      <pose>1.5 1.15 0.01 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.6 0.01 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.6 0.01 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="soft_wall_NK">
+      <pose>0.3 1.05 0.01 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.6 0.01 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.6 0.01 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
           </material>
         </visual>
       </link>
     </model>
 
     <model name="soft_wall_ML">
-      <pose>13.5 11.25 0.01 0 0 0</pose>
+      <pose>1.3 0.3 0.01 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.01 13.5 0.01</size>
+              <size>1.0 0.01 0.02</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.01 13.5 0.01</size>
+              <size>1.0 0.01 0.02</size>
             </box>
           </geometry>
           <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="soft_wall_M1L1">
+      <pose>0.95 0.75 0.01 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0 0.01 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 0.01 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="soft_wall_M1F">
+      <pose>0.45 0.6 0.01 0 0 1.5708</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 0.01 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.01 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
           </material>
         </visual>
       </link>

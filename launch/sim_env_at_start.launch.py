@@ -11,8 +11,8 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     
     # 机器人在 START 点生成（用于 Phase 2）
-    start_x = 0.22  # START 点 x 坐标
-    start_y = 1.65  # START 点 y 坐标
+    start_x = 1.58  # START 点 x 坐标
+    start_y = 0.15  # START 点 y 坐标
     start_yaw = 0.0  # 朝向
     
     print(f"Robot starting at START point: x={start_x}, y={start_y}, yaw={start_yaw}")
