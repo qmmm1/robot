@@ -46,14 +46,5 @@ def generate_launch_description():
             ],
             output='screen'
         ),
-        
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{
-                'use_sim_time': use_sim_time,
-                'publish_frequency': 50.0
-            }],
-            remappings=[('/joint_states', 'turtlebot3/joint_states')]
-        ),
+
     ])
