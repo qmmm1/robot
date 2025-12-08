@@ -31,6 +31,7 @@ setup(
     ] + collect_data_files('maps') 
       + collect_data_files('config') 
       + collect_data_files('launch')
+      + collect_data_files('urdf')
       + collect_data_files('worlds'),  # ✅ launch 仅作为数据文件
     install_requires=['setuptools'],
     zip_safe=True,
