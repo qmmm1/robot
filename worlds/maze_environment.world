@@ -2,7 +2,6 @@
 <sdf version="1.6">
   <world name="maze_environment">
 
-    <!-- 基础环境 -->
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -10,7 +9,7 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- START 点标记（绿色圆柱） -->
+
     <model name="start_marker">
       <pose>0.22 1.65 0.01 0 0 0</pose>
       <link name="link">
@@ -28,7 +27,6 @@
       </link>
     </model>
 
-    <!-- END 点标记（黄色圆柱） -->
     <model name="end_marker">
       <pose>1.58 1.65 0.01 0 0 0</pose>
       <link name="link">
@@ -46,7 +44,6 @@
       </link>
     </model>
 
-    <!-- 外框硬障碍（黑色墙壁） -->
     <model name="wall_AC">
       <pose>0 9 0.25 0 0 0</pose>
       <link name="link">
@@ -139,7 +136,6 @@
       </link>
     </model>
 
-    <!-- 内部小房间硬障碍 -->
     <model name="wall_AE">
       <pose>0 2.25 0.25 0 0 0</pose>
       <link name="link">
@@ -232,8 +228,6 @@
       </link>
     </model>
 
-    <!-- 软障碍物（灰色细线，仅视觉，无碰撞） -->
-    <!-- H(4.5,18) to I(4.5,8) -->
     <model name="soft_wall_HI">
       <pose>4.5 13 0.01 0 0 0</pose>
       <link name="link">
@@ -257,7 +251,6 @@
       </link>
     </model>
 
-    <!-- K(9,13.5) to N(9,0) -->
     <model name="soft_wall_KN">
       <pose>9 6.75 0.01 0 0 0</pose>
       <link name="link">
@@ -281,7 +274,6 @@
       </link>
     </model>
 
-    <!-- M(13.5,18) to L(13.5,4.5) -->
     <model name="soft_wall_ML">
       <pose>13.5 11.25 0.01 0 0 0</pose>
       <link name="link">
@@ -305,7 +297,6 @@
       </link>
     </model>
 
-    <!-- 环境光照 -->
     <light name="ambient_light" type="directional">
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
