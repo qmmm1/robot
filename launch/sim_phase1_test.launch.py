@@ -34,21 +34,5 @@ def generate_launch_description():
                 ])
             ])
         ),
-        
-        # 添加 robot_state_publisher 节点以发布机器人的 URDF 描述
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{
-                'robot_description': ParameterValue(robot_description_content, value_type=str)
-            }]
-        ),
-        
-        # 如果需要在 Gazebo 中显示机器人模型，则添加 spawn_entity 节点
-        Node(
-            package='gazebo_ros',
-            executable='spawn_entity.py',
-            arguments=['-topic', 'robot_description', '-entity', 'micro_ros_robot'],
-            output='screen'
-        )
+
     ])

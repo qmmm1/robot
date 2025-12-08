@@ -2,7 +2,6 @@
 <sdf version="1.6">
   <world name="maze_environment">
 
-    <!-- 基础环境 -->
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -10,30 +9,26 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- ✅ 关键：加载 ROS 插件（避免 spawn_entity 失败导致卡死） -->
     <plugin filename="libgazebo_ros_factory.so" name="gazebo_ros_factory"/>
     <plugin filename="libgazebo_ros_init.so" name="gazebo_ros_init"/>
 
-    <!-- 🌞 简化主光源（替代 directional light） -->
     <scene>
       <ambient>0.7 0.7 0.7 1</ambient>
       <background>0.8 0.8 0.9 1</background>
-      <shadows>false</shadows> <!-- ⚠️ 关闭阴影！大幅降低 GPU 负载 -->
+      <shadows>false</shadows>
     </scene>
 
-    <!-- ⚙️ 物理参数调优（降低 CPU 占用） -->
     <physics type="ode">
       <real_time_factor>1.0</real_time_factor>
-      <real_time_update_rate>500</real_time_update_rate> <!-- 默认 1000，降低到 500 -->
-      <max_step_size>0.002</max_step_size> <!-- 允许更大步长 -->
+      <real_time_update_rate>500</real_time_update_rate> 
+      <max_step_size>0.002</max_step_size> 
       <ode>
         <solver>
-          <type>quick</type> <!-- 使用快速求解器 -->
+          <type>quick</type> 
         </solver>
       </ode>
     </physics>
 
-    <!-- ================== START / END MARKERS ================== -->
     <model name="start_marker">
       <static>true</static>
       <pose>1.58 0.15 0.01 0 0 0</pose>
@@ -70,22 +65,18 @@
       </link>
     </model>
 
-    <!-- ================== 合并所有硬墙为一个模型（大幅减少实体数）================== -->
     <model name="maze_walls">
       <static>true</static>
       <pose>0 0 0 0 0 0</pose>
       <link name="walls_link">
-        <!-- 外框 -->
         <collision name="wall_AC"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>0 0.9 0.25 0 0 0</pose></collision>
         <collision name="wall_CD"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 1.8 0.25 0 0 0</pose></collision>
         <collision name="wall_DB"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>1.8 0.9 0.25 0 0 0</pose></collision>
         <collision name="wall_BA"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 0 0.25 0 0 0</pose></collision>
-        <!-- 内部硬墙 -->
         <collision name="wall_AE"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0 0.225 0.25 0 0 0</pose></collision>
         <collision name="wall_EF"><geometry><box><size>0.45 0.01 0.5</size></box></geometry><pose>0.225 0.45 0.25 0 0 0</pose></collision>
         <collision name="wall_FG"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0.45 0.225 0.25 0 0 0</pose></collision>
 
-        <!-- 可视化（与 collision 一致，但可简化） -->
         <visual name="wall_AC_v"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>0 0.9 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
         <visual name="wall_CD_v"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 1.8 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
         <visual name="wall_DB_v"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>1.8 0.9 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
@@ -96,8 +87,7 @@
       </link>
     </model>
 
-    <!-- ================== 软墙（仍保留独立，因可能用于检测）================== -->
-    <!-- 如果不需要碰撞检测，可设 <static>true</static> 并移除 collision -->
+
     <model name="soft_wall_SR">
       <static>true</static>
       <pose>0.325 1.7 0.01 0 0 0</pose>

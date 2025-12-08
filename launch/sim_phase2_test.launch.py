@@ -37,30 +37,4 @@ def generate_launch_description():
                 ])
             ])
         ),
-
-        # 发布 robot_description 到 ROS 2 系统
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{
-                'use_sim_time': True,
-                'robot_description': ParameterValue(robot_description_content, value_type=str)
-            }],
-            output='screen'
-        ),
-
-        # 在 Gazebo 中生成机器人实体
-        Node(
-            package='gazebo_ros',
-            executable='spawn_entity.py',
-            arguments=[
-                '-topic', 'robot_description',
-                '-entity', 'micro_ros_robot',
-                '-x', '1.58',   # 可选：设置初始位置（与 start_marker 对齐）
-                '-y', '0.15',
-                '-z', '0.0',
-                '-Y', '0.0'     # 初始朝向（弧度）
-            ],
-            output='screen'
-        ),
     ])
