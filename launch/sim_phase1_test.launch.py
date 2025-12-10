@@ -8,9 +8,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
-    
-    # 加载 MicroROS.urdf 文件内容
-    robot_description_content = Command(['xacro ', PathJoinSubstitution([pkg_dir, 'urdf', 'MicroROS.urdf'])])
+
     
     return LaunchDescription([
         # 使用随机位置环境
