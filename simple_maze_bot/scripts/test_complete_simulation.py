@@ -120,8 +120,8 @@ class CompleteMazeTester(Node):
         self.get_logger().info('🚀 开始完整迷宫导航测试...')
         
         # === Phase 1: 导航到 START 点 ===
-        self.get_logger().info('🔷 Phase 1: 导航到 START 点 (0.22, 1.65)')
-        success1 = self.send_goal(0.22, 1.65, theta=0.0)
+        self.get_logger().info('🔷 Phase 1: 导航到 START 点 (1.58, 0.15)')
+        success1 = self.send_goal(1.58, 0.15, theta=0.0)
         
         if not success1:
             self.get_logger().error('❌ Phase 1 失败，终止测试')
@@ -136,8 +136,8 @@ class CompleteMazeTester(Node):
             return False
         
         # === Phase 2: 导航到终点（避开软障碍）===
-        self.get_logger().info('🔶 Phase 2: 导航到终点 (1.58, 1.65)，避开软障碍')
-        success2 = self.send_goal(1.58, 1.65, theta=0.0)
+        self.get_logger().info('🔶 Phase 2: 导航到终点 (0.77, 1.6)，避开软障碍')
+        success2 = self.send_goal(0.77, 1.6, theta=0.0)
         
         if not success2:
             self.get_logger().error('❌ Phase 2 失败')

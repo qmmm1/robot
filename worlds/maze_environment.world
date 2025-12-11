@@ -66,26 +66,25 @@
     </model>
 
     <model name="maze_walls">
-      <static>true</static>
-      <pose>0 0 0 0 0 0</pose>
-      <link name="walls_link">
-        <collision name="wall_AC"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>0 0.9 0.25 0 0 0</pose></collision>
-        <collision name="wall_CD"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 1.8 0.25 0 0 0</pose></collision>
-        <collision name="wall_DB"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>1.8 0.9 0.25 0 0 0</pose></collision>
-        <collision name="wall_BA"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 0 0.25 0 0 0</pose></collision>
-        <collision name="wall_AE"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0 0.225 0.25 0 0 0</pose></collision>
-        <collision name="wall_EF"><geometry><box><size>0.45 0.01 0.5</size></box></geometry><pose>0.225 0.45 0.25 0 0 0</pose></collision>
-        <collision name="wall_FG"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0.45 0.225 0.25 0 0 0</pose></collision>
-
-        <visual name="wall_AC_v"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>0 0.9 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_CD_v"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 1.8 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_DB_v"><geometry><box><size>0.01 1.8 0.5</size></box></geometry><pose>1.8 0.9 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_BA_v"><geometry><box><size>1.8 0.01 0.5</size></box></geometry><pose>0.9 0 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_AE_v"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0 0.225 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_EF_v"><geometry><box><size>0.45 0.01 0.5</size></box></geometry><pose>0.225 0.45 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-        <visual name="wall_FG_v"><geometry><box><size>0.01 0.45 0.5</size></box></geometry><pose>0.45 0.225 0.25 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
-      </link>
-    </model>
+  <static>true</static>
+  <pose>0 0 0 0 0 0</pose>
+  <link name="walls_link">
+    <collision name="wall_AC"><geometry><box><size>0.01 1.8 0.1</size></box></geometry><pose>0 0.9 0.05 0 0 0</pose></collision>
+    <collision name="wall_CD"><geometry><box><size>1.8 0.01 0.1</size></box></geometry><pose>0.9 1.8 0.05 0 0 0</pose></collision>
+    <collision name="wall_DB"><geometry><box><size>0.01 1.8 0.1</size></box></geometry><pose>1.8 0.9 0.05 0 0 0</pose></collision>
+    <collision name="wall_BA"><geometry><box><size>1.8 0.01 0.1</size></box></geometry><pose>0.9 0 0.05 0 0 0</pose></collision>
+    <collision name="wall_AE"><geometry><box><size>0.01 0.45 0.1</size></box></geometry><pose>0 0.225 0.05 0 0 0</pose></collision>
+    <collision name="wall_EF"><geometry><box><size>0.45 0.01 0.1</size></box></geometry><pose>0.225 0.45 0.05 0 0 0</pose></collision>
+    <collision name="wall_FG"><geometry><box><size>0.01 0.45 0.1</size></box></geometry><pose>0.45 0.225 0.05 0 0 0</pose></collision>
+    <visual name="wall_AC_v"><geometry><box><size>0.01 1.8 0.1</size></box></geometry><pose>0 0.9 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_CD_v"><geometry><box><size>1.8 0.01 0.1</size></box></geometry><pose>0.9 1.8 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_DB_v"><geometry><box><size>0.01 1.8 0.1</size></box></geometry><pose>1.8 0.9 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_BA_v"><geometry><box><size>1.8 0.01 0.1</size></box></geometry><pose>0.9 0 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_AE_v"><geometry><box><size>0.01 0.45 0.1</size></box></geometry><pose>0 0.225 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_EF_v"><geometry><box><size>0.45 0.01 0.1</size></box></geometry><pose>0.225 0.45 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+    <visual name="wall_FG_v"><geometry><box><size>0.01 0.45 0.1</size></box></geometry><pose>0.45 0.225 0.05 0 0 0</pose><material><ambient>0 0 0 1</ambient></material></visual>
+  </link>
+</model>
 
 
     <model name="soft_wall_SR">
