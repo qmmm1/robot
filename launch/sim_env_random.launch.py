@@ -61,7 +61,7 @@ def generate_launch_description():
                 '-topic', 'robot_description',       # 从该 topic 读取 URDF
                 '-x', str(start_x),
                 '-y', str(start_y),
-                '-z', '0.01',
+                '-z', '0.05',
                 '-Y', str(start_yaw)
             ],
             output='screen'
