@@ -1,14 +1,31 @@
+from ament_index_python.packages import get_package_share_directory, get_package_share_path
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
+from launch.substitutions import PathJoinSubstitution, LaunchConfiguration, Command
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_directory
-import os
+from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
+    urdf_pkg_path = get_package_share_path('simple_maze_bot')
+    default_model_path = urdf_pkg_path / 'urdf' / 'MicroROS.urdf'
+
+    # 声明 model 参数，允许用户覆盖 URDF 路径
+    model_arg = DeclareLaunchArgument(
+        name='model',
+        default_value=str(default_model_path),
+        description='Absolute path to robot URDF file'
+    )
+
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    model_path = LaunchConfiguration('model')
+
+    # 使用 xacro 命令加载 URDF（兼容 .urdf 和 .xacro）
+    robot_description = ParameterValue(
+        Command(['xacro ', model_path]),
+        value_type=str
+    )
 
     # 机器人在 START 点生成（用于 Phase 2）
     start_x = 1.58   # START 点 x 坐标
@@ -17,15 +34,9 @@ def generate_launch_description():
 
     print(f"Robot starting at START point: x={start_x}, y={start_y}, yaw={start_yaw}")
 
-    # 直接读取 MicroROS.urdf（不使用 xacro）
-    urdf_file_path = os.path.join(pkg_dir, 'urdf', 'MicroROS.urdf')
-    if not os.path.exists(urdf_file_path):
-        raise FileNotFoundError(f"URDF file not found: {urdf_file_path}")
-    
-    with open(urdf_file_path, 'r') as urdf_file:
-        robot_description = urdf_file.read()
-
     return LaunchDescription([
+        model_arg,
+
         # 启动 Gazebo 仿真环境
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
@@ -55,6 +66,14 @@ def generate_launch_description():
             output='screen'
         ),
 
+        # 添加 base_footprint -> base_link 的静态 TF（Z=0.05 表示 base_link 高出地面 5cm）
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            arguments=['0', '0', '0.05', '0', '0', '0', 'base_footprint', 'base_link'],
+            output='screen'
+        ),
+
         # 在指定起点位置 spawn MicroROS 小车
         Node(
             package='gazebo_ros',
@@ -64,7 +83,7 @@ def generate_launch_description():
                 '-topic', 'robot_description',
                 '-x', str(start_x),
                 '-y', str(start_y),
-                '-z', '0.05',      # 根据小车轮子半径调整（示例值）
+                '-z', '0.0',          # 注意：现在 spawn 到 z=0（因为 base_footprint 在地面）
                 '-Y', str(start_yaw)
             ],
             output='screen'
