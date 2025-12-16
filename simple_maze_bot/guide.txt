@@ -1,0 +1,55 @@
+sudo docker run -it --rm -v /dev:/dev -v /dev/shm:/dev/shm --privileged --net=host microros/micro-ros-agent:humble udp4 --port 8090 -v4
+# 启动代理指令
+# 进入工作空间
+cd ~/ros2_ws
+
+# 编译你的包（首次编译或代码修改后需要）
+colcon build --packages-select simple_maze_bot
+
+# delete build
+rm -rf build/ install/
+
+# 或者编译所有包（如果还有其他包）
+# colcon build
+# 每次新开终端都需要执行（或添加到 ~/.bashrc）
+source install/setup.bash
+
+ros2 launch yahboomcar_bringup yahboomcar_bringup_launch.py
+
+# 终端 1：启动 Phase 1 导航栈
+ros2 launch simple_maze_bot phase1_to_start.launch.py
+
+# 终端 2：启动 Phase 2 导航栈（需要先停止 Phase 1）
+ros2 launch simple_maze_bot phase2_maze.launch.py
+
+# 终端 3：运行 Phase 1 脚本
+ros2 run simple_maze_bot go_to_start
+
+# 终端 4：运行 Phase 2 脚本
+ros2 run simple_maze_bot start_maze_task
+
+# 终端 5：启动 RViz
+rviz2 -d $(ros2 pkg prefix nav2_bringup)/share/nav2_bringup/rviz/nav2_default_view.rviz
+
+
+# 1. 检查 launch 文件是否在 share 目录
+ls install/simple_maze_bot/share/simple_maze_bot/launch/
+# 应包含: __init__.py, phase1_to_start.launch.py, phase2_maze.launch.py
+
+# 2. 检查 Python 包是否干净
+ls install/simple_maze_bot/lib/python3.*/site-packages/simple_maze_bot/
+# 应只有: __init__.py, scripts/（没有 launch/）
+
+# 3. 测试启动
+ros2 launch simple_maze_bot phase1_to_start.launch.py  # 应正常工作
+
+
+模拟
+ros2 launch simple_maze_bot sim_phase1_test.launch.py
+ros2 launch simple_maze_bot sim_phase2_test.launch.py
+
+# 在另一个终端运行测试脚本
+ros2 run simple_maze_bot 
+
+验证可运行脚本
+ros2 pkg executables simple_maze_bot

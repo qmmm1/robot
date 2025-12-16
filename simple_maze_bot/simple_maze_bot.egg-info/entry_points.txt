@@ -1,0 +1,5 @@
+[console_scripts]
+go_to_start = simple_maze_bot.go_to_start:main
+start_maze_task = simple_maze_bot.start_maze_task:main
+test_complete_simulation = simple_maze_bot.test_complete_simulation:main
+

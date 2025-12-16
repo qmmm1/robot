@@ -1,0 +1,38 @@
+simple_maze_bot/
+├── ErrorMsg
+├── guide.txt
+├── package.xml
+├── path_discribe.txt
+├── setup.py
+├── config/
+│   ├── nav2_params_phase1.yaml
+│   └── nav2_params_phase2.yaml
+├── launch/
+│   ├── phase1_to_start.launch.py
+│   ├── phase2_maze.launch.py
+│   ├── sim_complete_test.launch.py
+│   ├── sim_env_at_start.launch.py
+│   ├── sim_env_random.launch.py
+│   ├── sim_phase1_test.launch.py
+│   ├── sim_phase2_test.launch.py
+│   └── __init__.py
+├── maps/
+│   ├── map_create.ipynb
+│   ├── maze_no_soft.pgm
+│   ├── maze_no_soft.yaml
+│   ├── maze_original.pgm
+│   └── maze_original.yaml
+├── resource/
+│   └── simple_maze_bot          ← 通常用于 ament_index 资源，非标准位置
+├── simple_maze_bot/
+│   ├── __init__.py
+│   └── scripts/
+│       ├── go_to_start.py
+│       ├── start_maze_task.py
+│       ├── test_complete_simulation.py
+│       └── __init__.py
+├── urdf/
+│    └── MicroROS.urdf   ← 如果使用 TB3
+└── worlds/
+    ├── maze_environment.world
+    └── test.world
