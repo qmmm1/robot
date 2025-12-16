@@ -1,0 +1,2 @@
+launch
+simple_maze_bot

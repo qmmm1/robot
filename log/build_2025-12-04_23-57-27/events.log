@@ -1,0 +1,118 @@
+[0.000000] (-) TimerEvent: {}
+[0.000592] (-) JobUnselected: {'identifier': 'laserscan_to_point_publisher'}
+[0.000826] (-) JobUnselected: {'identifier': 'robot_localization'}
+[0.001017] (-) JobUnselected: {'identifier': 'robot_pose_publisher_ros2'}
+[0.001107] (-) JobUnselected: {'identifier': 'yahboom_app_save_map'}
+[0.001290] (-) JobUnselected: {'identifier': 'yahboom_esp32_camera'}
+[0.001381] (-) JobUnselected: {'identifier': 'yahboom_esp32_mediapipe'}
+[0.001462] (-) JobUnselected: {'identifier': 'yahboom_esp32ai_car'}
+[0.001539] (-) JobUnselected: {'identifier': 'yahboom_web_savmap_interfaces'}
+[0.001799] (-) JobUnselected: {'identifier': 'yahboomcar_base_node'}
+[0.002085] (-) JobUnselected: {'identifier': 'yahboomcar_bringup'}
+[0.002196] (-) JobUnselected: {'identifier': 'yahboomcar_ctrl'}
+[0.006764] (-) JobUnselected: {'identifier': 'yahboomcar_description'}
+[0.007070] (-) JobUnselected: {'identifier': 'yahboomcar_laser'}
+[0.007269] (-) JobUnselected: {'identifier': 'yahboomcar_msgs'}
+[0.007458] (-) JobUnselected: {'identifier': 'yahboomcar_multi'}
+[0.007549] (-) JobUnselected: {'identifier': 'yahboomcar_nav'}
+[0.007642] (simple_maze_bot) JobQueued: {'identifier': 'simple_maze_bot', 'dependencies': OrderedDict()}
+[0.007739] (simple_maze_bot) JobStarted: {'identifier': 'simple_maze_bot'}
+[0.094827] (-) TimerEvent: {}
+[0.195378] (-) TimerEvent: {}
+[0.296279] (-) TimerEvent: {}
+[0.397445] (-) TimerEvent: {}
+[0.498813] (-) TimerEvent: {}
+[0.600561] (-) TimerEvent: {}
+[0.701745] (-) TimerEvent: {}
+[0.804277] (-) TimerEvent: {}
+[0.905194] (-) TimerEvent: {}
+[1.006265] (-) TimerEvent: {}
+[1.107800] (-) TimerEvent: {}
+[1.208683] (-) TimerEvent: {}
+[1.309694] (-) TimerEvent: {}
+[1.411208] (-) TimerEvent: {}
+[1.511986] (-) TimerEvent: {}
+[1.612621] (-) TimerEvent: {}
+[1.713676] (-) TimerEvent: {}
+[1.814720] (-) TimerEvent: {}
+[1.915606] (-) TimerEvent: {}
+[2.016508] (-) TimerEvent: {}
+[2.117619] (-) TimerEvent: {}
+[2.218653] (-) TimerEvent: {}
+[2.320352] (-) TimerEvent: {}
+[2.421798] (-) TimerEvent: {}
+[2.522652] (-) TimerEvent: {}
+[2.623695] (-) TimerEvent: {}
+[2.729027] (-) TimerEvent: {}
+[2.830161] (-) TimerEvent: {}
+[2.930941] (-) TimerEvent: {}
+[3.035517] (-) TimerEvent: {}
+[3.136656] (-) TimerEvent: {}
+[3.237886] (-) TimerEvent: {}
+[3.339320] (-) TimerEvent: {}
+[3.440549] (-) TimerEvent: {}
+[3.541550] (-) TimerEvent: {}
+[3.642507] (-) TimerEvent: {}
+[3.743411] (-) TimerEvent: {}
+[3.844212] (-) TimerEvent: {}
+[3.945286] (-) TimerEvent: {}
+[4.046340] (-) TimerEvent: {}
+[4.146987] (-) TimerEvent: {}
+[4.248590] (-) TimerEvent: {}
+[4.349508] (-) TimerEvent: {}
+[4.450575] (-) TimerEvent: {}
+[4.551510] (-) TimerEvent: {}
+[4.652536] (-) TimerEvent: {}
+[4.753663] (-) TimerEvent: {}
+[4.855378] (-) TimerEvent: {}
+[4.956731] (-) TimerEvent: {}
+[5.058194] (-) TimerEvent: {}
+[5.159974] (-) TimerEvent: {}
+[5.260824] (-) TimerEvent: {}
+[5.362800] (-) TimerEvent: {}
+[5.462086] (simple_maze_bot) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/simple_maze_bot', 'build', '--build-base', '/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build', 'install', '--record', '/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/install.log', '--single-version-externally-managed'], 'cwd': '/home/yahboom/yahboomcar_ws/src/simple_maze_bot', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'yahboom', 'LC_TIME': 'zh_CN.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/yahboom/yahboomcar_ws/install/yahboomcar_msgs/lib:/home/yahboom/yahboomcar_ws/install/yahboom_web_savmap_interfaces/lib:/home/yahboom/yahboomcar_ws/install/robot_localization/lib:/home/yahboom/uros_ws/install/micro_ros_agent/lib:/home/yahboom/uros_ws/install/micro_ros_msgs/lib:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_interfaces/lib:/home/yahboom/imu_ws/install/rviz_imu_plugin/lib:/home/yahboom/imu_ws/install/imu_filter_madgwick/lib:/home/yahboom/imu_ws/install/imu_complementary_filter/lib:/home/yahboom/gmapping_ws/install/openslam_gmapping/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yahboom', 'OLDPWD': '/home', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'zh_CN.UTF-8', 'SYSTEMD_EXEC_PID': '3049', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/yahboom/uros_ws/install:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install:/home/yahboom/imu_ws/install:/home/yahboom/gmapping_ws/install:/home/yahboom/yahboomcar_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'yahboom', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'yahboom', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/yahboom/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/yahboom-VM:@/tmp/.ICE-unix/1246,unix/yahboom-VM:/tmp/.ICE-unix/1246', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'zh_CN.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/de1b69ba_a1eb_4740_a023_05f5e92b7956', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.1ZPFH3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.108', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '20', 'AMENT_PREFIX_PATH': '/home/yahboom/yahboomcar_ws/install/yahboomcar_nav:/home/yahboom/yahboomcar_ws/install/yahboomcar_multi:/home/yahboom/yahboomcar_ws/install/yahboomcar_msgs:/home/yahboom/yahboomcar_ws/install/yahboomcar_laser:/home/yahboom/yahboomcar_ws/install/yahboomcar_description:/home/yahboom/yahboomcar_ws/install/yahboomcar_ctrl:/home/yahboom/yahboomcar_ws/install/yahboomcar_bringup:/home/yahboom/yahboomcar_ws/install/yahboomcar_base_node:/home/yahboom/yahboomcar_ws/install/yahboom_web_savmap_interfaces:/home/yahboom/yahboomcar_ws/install/yahboom_esp32ai_car:/home/yahboom/yahboomcar_ws/install/yahboom_esp32_mediapipe:/home/yahboom/yahboomcar_ws/install/yahboom_esp32_camera:/home/yahboom/yahboomcar_ws/install/yahboom_app_save_map:/home/yahboom/yahboomcar_ws/install/robot_pose_publisher_ros2:/home/yahboom/yahboomcar_ws/install/robot_localization:/home/yahboom/yahboomcar_ws/install/laserscan_to_point_publisher:/home/yahboom/uros_ws/install/micro_ros_setup:/home/yahboom/uros_ws/install/micro_ros_agent:/home/yahboom/uros_ws/install/micro_ros_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_metapackage:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_topic:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_tf:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_service:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_param:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_action:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_interfaces:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_helloworld_py:/home/yahboom/imu_ws/install/imu_tools:/home/yahboom/imu_ws/install/rviz_imu_plugin:/home/yahboom/imu_ws/install/imu_filter_madgwick:/home/yahboom/imu_ws/install/imu_complementary_filter:/home/yahboom/gmapping_ws/install/slam_gmapping:/home/yahboom/gmapping_ws/install/openslam_gmapping:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/prefix_override:/home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_nav/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_msgs/local/lib/python3.10/dist-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_laser/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_description/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_ctrl/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboomcar_bringup/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboom_web_savmap_interfaces/local/lib/python3.10/dist-packages:/home/yahboom/yahboomcar_ws/install/yahboom_esp32ai_car/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboom_esp32_mediapipe/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboom_esp32_camera/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/yahboom_app_save_map/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ws/install/robot_localization/local/lib/python3.10/dist-packages:/home/yahboom/yahboomcar_ws/install/laserscan_to_point_publisher/lib/python3.10/site-packages:/home/yahboom/uros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_topic/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_tf/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_service/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_param/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_action/lib/python3.10/site-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_interfaces/local/lib/python3.10/dist-packages:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_helloworld_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'zh_CN.UTF-8', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/yahboom/yahboomcar_ws/install/yahboomcar_msgs:/home/yahboom/yahboomcar_ws/install/yahboomcar_base_node:/home/yahboom/yahboomcar_ws/install/yahboom_web_savmap_interfaces:/home/yahboom/yahboomcar_ws/install/robot_pose_publisher_ros2:/home/yahboom/yahboomcar_ws/install/robot_localization:/home/yahboom/uros_ws/install/micro_ros_setup:/home/yahboom/uros_ws/install/micro_ros_agent:/home/yahboom/uros_ws/install/micro_ros_msgs:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_metapackage:/home/yahboom/yahboomcar_ros2_ws/yahboomcar_ws/install/pkg_interfaces:/home/yahboom/imu_ws/install/imu_tools:/home/yahboom/imu_ws/install/rviz_imu_plugin:/home/yahboom/imu_ws/install/imu_filter_madgwick:/home/yahboom/imu_ws/install/imu_complementary_filter:/home/yahboom/gmapping_ws/install/slam_gmapping:/home/yahboom/gmapping_ws/install/openslam_gmapping'}, 'shell': False}
+[5.471208] (-) TimerEvent: {}
+[5.572520] (-) TimerEvent: {}
+[5.673148] (-) TimerEvent: {}
+[5.774622] (-) TimerEvent: {}
+[5.875953] (-) TimerEvent: {}
+[5.979644] (-) TimerEvent: {}
+[6.080583] (-) TimerEvent: {}
+[6.181570] (-) TimerEvent: {}
+[6.282614] (-) TimerEvent: {}
+[6.383837] (-) TimerEvent: {}
+[6.485859] (-) TimerEvent: {}
+[6.588536] (-) TimerEvent: {}
+[6.689390] (-) TimerEvent: {}
+[6.790507] (-) TimerEvent: {}
+[6.891538] (-) TimerEvent: {}
+[6.992783] (-) TimerEvent: {}
+[7.096585] (-) TimerEvent: {}
+[7.103948] (simple_maze_bot) StdoutLine: {'line': b'running egg_info\n'}
+[7.109210] (simple_maze_bot) StdoutLine: {'line': b'writing ../build/simple_maze_bot/simple_maze_bot.egg-info/PKG-INFO\n'}
+[7.111798] (simple_maze_bot) StdoutLine: {'line': b'writing dependency_links to ../build/simple_maze_bot/simple_maze_bot.egg-info/dependency_links.txt\n'}
+[7.113022] (simple_maze_bot) StdoutLine: {'line': b'writing entry points to ../build/simple_maze_bot/simple_maze_bot.egg-info/entry_points.txt\n'}
+[7.114381] (simple_maze_bot) StdoutLine: {'line': b'writing requirements to ../build/simple_maze_bot/simple_maze_bot.egg-info/requires.txt\n'}
+[7.115990] (simple_maze_bot) StdoutLine: {'line': b'writing top-level names to ../build/simple_maze_bot/simple_maze_bot.egg-info/top_level.txt\n'}
+[7.128746] (simple_maze_bot) StdoutLine: {'line': b"reading manifest file '../build/simple_maze_bot/simple_maze_bot.egg-info/SOURCES.txt'\n"}
+[7.132607] (simple_maze_bot) StdoutLine: {'line': b"writing manifest file '../build/simple_maze_bot/simple_maze_bot.egg-info/SOURCES.txt'\n"}
+[7.134795] (simple_maze_bot) StdoutLine: {'line': b'running build\n'}
+[7.135808] (simple_maze_bot) StdoutLine: {'line': b'running build_py\n'}
+[7.137040] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build\n'}
+[7.137428] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib\n'}
+[7.137742] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot\n'}
+[7.138543] (simple_maze_bot) StdoutLine: {'line': b'copying simple_maze_bot/__init__.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot\n'}
+[7.139102] (simple_maze_bot) StdoutLine: {'line': b'running install\n'}
+[7.139573] (simple_maze_bot) StdoutLine: {'line': b'running install_lib\n'}
+[7.145103] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot\n'}
+[7.150265] (simple_maze_bot) StdoutLine: {'line': b'copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/__init__.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot\n'}
+[7.154950] (simple_maze_bot) StdoutLine: {'line': b'byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/__init__.py to __init__.cpython-310.pyc\n'}
+[7.155511] (simple_maze_bot) StdoutLine: {'line': b'running install_data\n'}
+[7.156644] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/share/ament_index\n'}
+[7.157090] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/share/ament_index/resource_index\n'}
+[7.159275] (simple_maze_bot) StdoutLine: {'line': b'creating /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/share/ament_index/resource_index/packages\n'}
+[7.160007] (simple_maze_bot) StderrLine: {'line': b"error: can't copy 'resource/simple_maze_bot': doesn't exist or not a regular file\n"}
+[7.197044] (-) TimerEvent: {}
+[7.219976] (simple_maze_bot) CommandEnded: {'returncode': 1}
+[7.221276] (simple_maze_bot) JobEnded: {'identifier': 'simple_maze_bot', 'rc': 1}
+[7.226856] (-) EventReactorShutdown: {}

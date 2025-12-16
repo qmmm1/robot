@@ -1,0 +1,31 @@
+[5.563s] Invoking command in '/home/yahboom/yahboomcar_ws/src/simple_maze_bot': PYTHONPATH=/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/prefix_override:/home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/simple_maze_bot build --build-base /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build install --record /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/install.log --single-version-externally-managed
+[7.078s] running egg_info
+[7.089s] writing ../build/simple_maze_bot/simple_maze_bot.egg-info/PKG-INFO
+[7.091s] writing dependency_links to ../build/simple_maze_bot/simple_maze_bot.egg-info/dependency_links.txt
+[7.091s] writing entry points to ../build/simple_maze_bot/simple_maze_bot.egg-info/entry_points.txt
+[7.092s] writing requirements to ../build/simple_maze_bot/simple_maze_bot.egg-info/requires.txt
+[7.093s] writing top-level names to ../build/simple_maze_bot/simple_maze_bot.egg-info/top_level.txt
+[7.100s] reading manifest file '../build/simple_maze_bot/simple_maze_bot.egg-info/SOURCES.txt'
+[7.106s] writing manifest file '../build/simple_maze_bot/simple_maze_bot.egg-info/SOURCES.txt'
+[7.107s] running build
+[7.108s] running build_py
+[7.112s] copying simple_maze_bot/__init__.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot
+[7.115s] copying simple_maze_bot/scripts/go_to_start.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts
+[7.116s] copying simple_maze_bot/scripts/start_maze_task.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts
+[7.117s] copying simple_maze_bot/scripts/__init__.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts
+[7.117s] copying simple_maze_bot/scripts/test_complete_simulation.py -> /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts
+[7.119s] running install
+[7.121s] running install_lib
+[7.127s] copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts/go_to_start.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts
+[7.128s] copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts/start_maze_task.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts
+[7.129s] copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts/__init__.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts
+[7.130s] copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/scripts/test_complete_simulation.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts
+[7.131s] copying /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build/lib/simple_maze_bot/__init__.py -> /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot
+[7.135s] byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts/go_to_start.py to go_to_start.cpython-310.pyc
+[7.138s] byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts/start_maze_task.py to start_maze_task.cpython-310.pyc
+[7.142s] byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts/__init__.py to __init__.cpython-310.pyc
+[7.143s] byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/scripts/test_complete_simulation.py to test_complete_simulation.cpython-310.pyc
+[7.149s] byte-compiling /home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages/simple_maze_bot/__init__.py to __init__.cpython-310.pyc
+[7.150s] running install_data
+[7.157s] error: can't copy 'resource/simple_maze_bot': doesn't exist or not a regular file
+[7.216s] Invoked command in '/home/yahboom/yahboomcar_ws/src/simple_maze_bot' returned '1': PYTHONPATH=/home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/prefix_override:/home/yahboom/yahboomcar_ws/src/install/simple_maze_bot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/simple_maze_bot build --build-base /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/build install --record /home/yahboom/yahboomcar_ws/src/build/simple_maze_bot/install.log --single-version-externally-managed
