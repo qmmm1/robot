@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <robot name="micro4.0">
 
-  <!-- ========================================== -->
-  <!-- 1. 基础结构 -->
-  <!-- ========================================== -->
+  <!-- 1. Base Structure -->
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
@@ -21,22 +19,19 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-	<mesh filename="package://yahboomcar_description/meshes/base_link.STL" scale="1 1 1"/>
+	    <mesh filename="package://yahboomcar_description/meshes/base_link.STL" scale="1 1 1"/>
       </geometry>
       <material name="white"><color rgba="1 1 1 1" /></material>
     </visual>
-    <!-- 碰撞体保持 Box 不变，这是防坠落的关键 -->
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry><box size="0.20 0.14 0.04"/></geometry>
     </collision>
   </link>
 
-  <!-- ========================================== -->
-  <!-- 2. 车轮 (Visual scale 全部改回 1 1 1) -->
-  <!-- ========================================== -->
-
-  <!-- 左前轮 -->
+  <!-- 2. Wheels -->
+  
+  <!-- Front Left Wheel -->
   <link name="zq_Link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -58,7 +53,7 @@
     <axis xyz="0 1 0" />
   </joint>
 
-  <!-- 右前轮 -->
+  <!-- Front Right Wheel -->
   <link name="yq_Link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -80,7 +75,7 @@
     <axis xyz="0 1 0" />
   </joint>
 
-  <!-- 左后轮 -->
+  <!-- Rear Left Wheel -->
   <link name="zh_Link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -102,7 +97,7 @@
     <axis xyz="0 1 0" />
   </joint>
 
-  <!-- 右后轮 -->
+  <!-- Rear Right Wheel -->
   <link name="yh_Link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -125,9 +120,7 @@
   </joint>
 
 
-  <!-- ========================================== -->
-  <!-- 3. 传感器 (IMU & Radar) -->
-  <!-- ========================================== -->
+  <!-- 3. Sensors (IMU & Lidar) -->
 
   <link name="imu_Link">
     <inertial>
@@ -144,7 +137,6 @@
     <child link="imu_Link" />
   </joint>
 
-  <!-- 雷达 Link -->
   <link name="radar_Link">
     <inertial>
       <mass value="0.038" />
@@ -163,7 +155,6 @@
     <child link="radar_Link" />
   </joint>
 
-  <!-- 雷达插件 -->
   <gazebo reference="radar_Link">
     <sensor name="lidar" type="ray">
       <always_on>true</always_on>
@@ -195,9 +186,7 @@
   </gazebo>
 
 
-  <!-- ========================================== -->
-  <!-- 4. 机械臂 (装饰用) -->
-  <!-- ========================================== -->
+  <!-- 4. Decorative Arm Links -->
   <link name="jq1_Link">
     <visual><geometry><mesh filename="package://yahboomcar_description/meshes/jq1_Link.STL" scale="1 1 1"/></geometry></visual>
     <inertial><mass value="0.01"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial>
@@ -218,9 +207,7 @@
   </joint>
 
 
-  <!-- ========================================== -->
-  <!-- 5. Gazebo 物理插件与摩擦力 -->
-  <!-- ========================================== -->
+  <!-- 5. Gazebo Plugins and Physics -->
   <gazebo>
     <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
       <ros>
@@ -243,6 +230,7 @@
     </plugin>
   </gazebo>
 
+  <!-- Friction and Surface Properties -->
   <gazebo reference="zq_Link">
     <mu1>1.0</mu1><mu2>1.0</mu2><kp>500000.0</kp><kd>10.0</kd>
   </gazebo>

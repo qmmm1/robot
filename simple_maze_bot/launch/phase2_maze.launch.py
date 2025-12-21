@@ -1,5 +1,3 @@
-# launch/phase2_maze.launch.py
-
 from launch import LaunchDescription
 from launch.actions import SetEnvironmentVariable
 from launch_ros.actions import Node
@@ -9,10 +7,13 @@ import os
 def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
 
+    # --- Environment Variables ---
     stdout_linebuf_envvar = SetEnvironmentVariable(
         'RCUTILS_CONSOLE_STDOUT_LINE_BUFFERED', '1')
 
-    # Map Server: 加载完整地图（含软障碍）
+    # --- Nodes ---
+
+    # Map Server: Full map with soft obstacles
     map_server_node = Node(
         package='nav2_map_server',
         executable='map_server',
@@ -22,6 +23,7 @@ def generate_launch_description():
         remappings=[('/map', '/maze_full')]
     )
 
+    # AMCL Localization
     amcl_node = Node(
         package='nav2_amcl',
         executable='amcl',
@@ -30,6 +32,7 @@ def generate_launch_description():
         parameters=[os.path.join(pkg_dir, 'config', 'nav2_params_phase2.yaml')]
     )
 
+    # Planner Server
     planner_node = Node(
         package='nav2_planner',
         executable='planner_server',
@@ -38,6 +41,7 @@ def generate_launch_description():
         parameters=[os.path.join(pkg_dir, 'config', 'nav2_params_phase2.yaml')]
     )
 
+    # Controller Server
     controller_node = Node(
         package='nav2_controller',
         executable='controller_server',
@@ -46,6 +50,7 @@ def generate_launch_description():
         parameters=[os.path.join(pkg_dir, 'config', 'nav2_params_phase2.yaml')]
     )
 
+    # BT Navigator
     bt_navigator_node = Node(
         package='nav2_bt_navigator',
         executable='bt_navigator',
@@ -54,6 +59,7 @@ def generate_launch_description():
         parameters=[os.path.join(pkg_dir, 'config', 'nav2_params_phase2.yaml')]
     )
 
+    # Lifecycle Manager
     lifecycle_manager_node = Node(
         package='nav2_lifecycle_manager',
         executable='lifecycle_manager',

@@ -10,14 +10,14 @@ def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
-    # 机器人在 START 点生成（用于 Phase 2）
-    start_x = 1.58   # START 点 x 坐标
-    start_y = 0.15   # START 点 y 坐标
-    start_yaw = 0.0  # 朝向（弧度）
+    # --- Initial Robot Pose for Phase 2 ---
+    start_x = 1.58
+    start_y = 0.15
+    start_yaw = 0.0
 
     print(f"Robot starting at START point: x={start_x}, y={start_y}, yaw={start_yaw}")
 
-    # 直接读取 MicroROS.urdf（不使用 xacro）
+    # --- Robot Description ---
     urdf_file_path = os.path.join(pkg_dir, 'urdf', 'MicroROS.urdf')
     if not os.path.exists(urdf_file_path):
         raise FileNotFoundError(f"URDF file not found: {urdf_file_path}")
@@ -26,7 +26,7 @@ def generate_launch_description():
         robot_description = urdf_file.read()
 
     return LaunchDescription([
-        # 启动 Gazebo 仿真环境
+        # Gazebo simulation environment
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 PathJoinSubstitution([
@@ -42,7 +42,7 @@ def generate_launch_description():
             }.items()
         ),
 
-        # 发布 robot_description 到 ROS 2 系统
+        # Robot State Publisher
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
@@ -55,7 +55,7 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # 在指定起点位置 spawn MicroROS 小车
+        # Spawn entity at specified START position
         Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
@@ -64,7 +64,7 @@ def generate_launch_description():
                 '-topic', 'robot_description',
                 '-x', str(start_x),
                 '-y', str(start_y),
-                '-z', '0.05',      # 根据小车轮子半径调整（示例值）
+                '-z', '0.05',
                 '-Y', str(start_yaw)
             ],
             output='screen'

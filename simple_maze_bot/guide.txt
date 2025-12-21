@@ -1,55 +1,50 @@
-sudo docker run -it --rm -v /dev:/dev -v /dev/shm:/dev/shm --privileged --net=host microros/micro-ros-agent:humble udp4 --port 8090 -v4
-# 启动代理指令
-# 进入工作空间
-cd ~/ros2_ws
+Hi, please use the Ubuntu22.04_For_microROS virtual machine for reimplementation, it's a vortual machine with ros2 environment set up already.
 
-# 编译你的包（首次编译或代码修改后需要）
+The expected directory path should be ~/yahboomcar_ws/src/simple_maze_bot, inside the directory, you can see files below
+config     launch  package.xml        resource  simple_maze_bot  worlds
+guide.txt  maps    path_discribe.txt  setup.py  urdf
+
+Under src directory, you should see directories:
+laserscan_to_point_publisher  yahboomcar_laser
+robot_localization            yahboomcar_msgs
+robot_pose_publisher_ros2     yahboomcar_multi
+simple_maze_bot               yahboomcar_nav
+yahboom_app_save_map          yahboom_esp32ai_car
+yahboomcar_base_node          yahboom_esp32_camera
+yahboomcar_bringup            yahboom_esp32_mediapipe
+yahboomcar_ctrl               yahboom_web_savmap_interfaces
+yahboomcar_description
+
+#Let's start!
+cd ~/yahboomcar_ws
+
+# assembly your system
+colcon build
+
+# if you modify any files in this dir, please assembly again
 colcon build --packages-select simple_maze_bot
 
 # delete build
 rm -rf build/ install/
 
-# 或者编译所有包（如果还有其他包）
-# colcon build
-# 每次新开终端都需要执行（或添加到 ~/.bashrc）
+# execute every time you open a terminal
 source install/setup.bash
 
-ros2 launch yahboomcar_bringup yahboomcar_bringup_launch.py
+# launch phase 1 test
+ros2 launch simple_maze_bot sim_phase1_test.launch.py
+# launch phase 2 test
+ros2 launch simple_maze_bot sim_phase2_test.launch.py
 
-# 终端 1：启动 Phase 1 导航栈
-ros2 launch simple_maze_bot phase1_to_start.launch.py
 
-# 终端 2：启动 Phase 2 导航栈（需要先停止 Phase 1）
-ros2 launch simple_maze_bot phase2_maze.launch.py
-
-# 终端 3：运行 Phase 1 脚本
+#open a new terminal, start navigation
 ros2 run simple_maze_bot go_to_start
 
-# 终端 4：运行 Phase 2 脚本
 ros2 run simple_maze_bot start_maze_task
 
-# 终端 5：启动 RViz
+# launch RViz
 rviz2 -d $(ros2 pkg prefix nav2_bringup)/share/nav2_bringup/rviz/nav2_default_view.rviz
 
 
-# 1. 检查 launch 文件是否在 share 目录
-ls install/simple_maze_bot/share/simple_maze_bot/launch/
-# 应包含: __init__.py, phase1_to_start.launch.py, phase2_maze.launch.py
 
-# 2. 检查 Python 包是否干净
-ls install/simple_maze_bot/lib/python3.*/site-packages/simple_maze_bot/
-# 应只有: __init__.py, scripts/（没有 launch/）
-
-# 3. 测试启动
-ros2 launch simple_maze_bot phase1_to_start.launch.py  # 应正常工作
-
-
-模拟
-ros2 launch simple_maze_bot sim_phase1_test.launch.py
-ros2 launch simple_maze_bot sim_phase2_test.launch.py
-
-# 在另一个终端运行测试脚本
-ros2 run simple_maze_bot 
-
-验证可运行脚本
+# In case you cannot find executables, try to debug with this
 ros2 pkg executables simple_maze_bot

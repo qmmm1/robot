@@ -1,19 +1,25 @@
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import PathJoinSubstitution, Command
-from launch_ros.actions import Node
-from launch_ros.parameter_descriptions import ParameterValue
+from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
     
-    # 加载 MicroROS.urdf 文件内容
-    robot_description_content = Command(['xacro ', PathJoinSubstitution([pkg_dir, 'urdf', 'MicroROS.urdf'])])
+    # --- Launch Arguments ---
+    use_sim_time_arg = DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='true',
+        description='Use simulation clock'
+    )
     
+    use_sim_time = LaunchConfiguration('use_sim_time')
+
     return LaunchDescription([
-        # 使用随机位置环境
+        use_sim_time_arg,
+        
+        # Step 1: Start Gazebo environment and robot immediately
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
@@ -21,18 +27,31 @@ def generate_launch_description():
                     'launch',
                     'sim_env_random.launch.py'
                 ])
-            ])
+            ]),
+            launch_arguments={
+                'use_sim_time': use_sim_time
+            }.items()
         ),
         
-        # 启动 Phase 1 导航
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([
-                PathJoinSubstitution([
-                    pkg_dir,
-                    'launch',
-                    'phase1_to_start.launch.py'
-                ])
-            ])
-        ),
-
+        # Step 2: Delay navigation system start by 5s to ensure Gazebo is ready
+        TimerAction(
+            period=5.0,
+            actions=[
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource([
+                        PathJoinSubstitution([
+                            pkg_dir,
+                            'launch',
+                            'phase1_to_start.launch.py'
+                        ])
+                    ]),
+                    launch_arguments={
+                        'use_sim_time': use_sim_time,
+                        'x': '1.65',
+                        'y': '1.22',
+                        'yaw': '2.01'
+                    }.items()
+                )
+            ]
+        )
     ])

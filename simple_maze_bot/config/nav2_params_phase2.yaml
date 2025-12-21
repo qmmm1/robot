@@ -1,4 +1,4 @@
-# AMCL 定位（已知在 START 附近，可设初始位姿）
+# --- AMCL Localization ---
 amcl:
   ros__parameters:
     use_sim_time: false
@@ -10,11 +10,10 @@ amcl:
     global_frame_id: "map"
     odom_frame_id: "odom"
     scan_topic: "/scan"
-    # 可选：设为精确 START 位置，加速收敛
     initial_pose: {x: 1.58, y: 0.15, z: 0.0, yaw: 0.0}
     set_initial_pose: true
 
-# 全局规划器（A*）
+# --- Planner Server ---
 planner_server:
   ros__parameters:
     planner_plugins: ["GridBased"]
@@ -23,7 +22,7 @@ planner_server:
       use_astar: true
       tolerance: 0.1
 
-# 局部控制器（DWB）
+# --- Controller Server ---
 controller_server:
   ros__parameters:
     controller_frequency: 10.0
@@ -35,12 +34,12 @@ controller_server:
       max_vel_theta: 0.8
       prune_plan: true
 
-# 行为树
+# --- BT Navigator ---
 bt_navigator:
   ros__parameters:
     default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
 
-# 全局代价地图（使用完整地图，含软障碍墙）
+# --- Global Costmap ---
 global_costmap:
   global_costmap:
     ros__parameters:
@@ -50,9 +49,9 @@ global_costmap:
       robot_base_frame: base_link
       resolution: 0.005
       static_map: true
-      map_topic: /maze_full   # ← 关键：使用完整地图
+      map_topic: /maze_full
 
-# 局部代价地图（启用动态避障）
+# --- Local Costmap ---
 local_costmap:
   local_costmap:
     ros__parameters:

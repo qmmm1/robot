@@ -9,14 +9,14 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     pkg_dir = get_package_share_directory('simple_maze_bot')
 
-    # 加载 URDF 文件（使用 xacro 兼容处理；若为纯 URDF，xacro 也能直接输出）
+    # --- Robot Description ---
     robot_description_content = Command([
         'xacro ',
         PathJoinSubstitution([pkg_dir, 'urdf', 'MicroROS.urdf'])
     ])
 
     return LaunchDescription([
-        # 使用在 START 点生成的环境
+        # Start simulation at the designated START point
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
@@ -27,7 +27,7 @@ def generate_launch_description():
             ])
         ),
 
-        # 启动 Phase 2 导航
+        # Start Phase 2 navigation system
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
